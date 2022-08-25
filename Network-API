@@ -1,0 +1,16 @@
+An API for the easy implementation of Network applications,RFC documents.
+
+Easily implement an RFC
+
+A curated list of commonly used protocols that abstracts all the inner working.
+
+OSI model
+7. Application layer.
+6. Presentation layer.
+5. Session layer.
+4. Transport layer.
+3. Internetworking layer.
+2. Data link layer.
+1. Physical layer.
+
+
