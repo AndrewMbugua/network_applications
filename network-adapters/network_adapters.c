@@ -3,9 +3,9 @@
 #include<stdio.h>
 #include<ifaddrs.h>
 #include<stdlib.h>
-
+#include<time.h>
 int main(){
-
+   clock_t begin = clock();
    struct ifaddrs *addresses;
      /* getifaddrs() allocates memory & fills in it a linked list
      of addresses  */
@@ -40,7 +40,10 @@ int main(){
    }
 
        freeifaddrs(addresses);
+       clock_t end = clock();
+       double time_spent = (double)(end - begin);
+       printf("\nExecution time:%fms",time_spent);
        return 0;
 
-
+       
 }
