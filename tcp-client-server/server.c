@@ -58,7 +58,7 @@ for (server_info; server_info != NULL; server_info -> ai_next)
         continue;
     }
 
-//research
+//setsockopt
 if(setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
 {
     perror("setsockopt");
@@ -74,7 +74,6 @@ if(bind(sockfd, server_info -> ai_addr, server_info -> ai_addrlen) == -1)
 break;
 }
 
-//p - server_info
 freeaddrinfo(server_info);
 
 if(server_info == NULL)
