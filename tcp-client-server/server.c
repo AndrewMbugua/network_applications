@@ -1,26 +1,15 @@
 #include "headers.h"
 
 /*
-notes
+**notes**
 kill server process - sudo kill $(sudo lsof -t -i:port_set)
 valgrind test - valgrind --tool=memcheck --leak-check=full ./tcp_server
+Port is defined in the header file
 */
 
-#define PORT "53574" //port users will be connected to
-
-#define BACKLOG 10 //how many pending connections queue will hold
-
-//get socket address,IPv4 for now
-void *get_in_addr(struct sockaddr *sa)
-{
-if (sa -> sa_family == AF_INET) //AF_INET identifies IP address family
-{
-    return &(((struct sockaddr_in*)sa)->sin_addr);
-}
-
-}
-
 int main(){
+clock_t begin = clock();
+
 /* listen on sock_fd
    receive new connection on few_fd
 */
@@ -112,6 +101,9 @@ printf("Andrew's server: got connection from %s\n", mapped_addresses);
 }
 close(new_connection);
 
+clock_t end = clock();
+double time_spent = (double)(end - begin);
+printf("\nExecution time:%fms",time_spent);
 
 return 0;
 }
