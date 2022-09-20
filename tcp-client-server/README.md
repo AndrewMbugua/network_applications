@@ -1,13 +1,14 @@
 ## TCP Server
 
-usage
+### usage
 
-$ make
-$ ./tcp_server
+`` $ make ``
 
-### Open another terminal
-$ telnet 127.0.0.1 5374 //5374 is the set port number
+`` $ ./tcp_server ``
 
-### Post usage - Kill port using 
-$ sudo kill $(sudo lsof -t -i:5374)
+#### Open another terminal
+`` $ telnet 127.0.0.1 5374 //5374 is the set port number``
+
+#### Post usage - Kill port use
+`` $ sudo kill $(sudo lsof -t -i:5374)``
 
